@@ -1,20 +1,21 @@
 <template>
-    <h1>Все новости</h1>
-    <NewsCard
+    <div class="container">
+        <h1>Все новости</h1>
+        <NewsList
         v-if="isLoad"
-    v-for="newsCard in news"
-    :key="newsCard.id"
-    :newsCard = "newsCard"
-    ></NewsCard>
+        v-for="newsItem in news"
+        :key="newsItem.id"
+        :newsItem = "newsItem"
+        ></NewsList>
+    </div>
 </template>
 
 <script>
-    import NewsCard from "./NewsCard";
-
+    import NewsList from "./NewsList";
     export default {
         name: "AllNewsComponent",
         components: {
-            NewsCard
+            NewsList
         },
         data() {
             return {
@@ -28,7 +29,6 @@
                 this.isLoad = true
                 console.log(response.data)
             })
-            console.log('ok')
         }
     }
 </script>

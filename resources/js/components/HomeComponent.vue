@@ -1,41 +1,36 @@
 <template>
-    <h1>Лента избранных новостей</h1>
     <div class="container">
-
-
-        <div class="card">
-            <h2>Новость 1</h2>
-        </div>
-
-        <div class="card">
-            <h2>Новость 2</h2>
-        </div>
-
-
+        <h1>Лента избранных новостей</h1>
+        <NewsList
+            v-if="isLoad"
+            v-for="newsItem in newsFavorites"
+            :key="newsItem.id"
+            :newsItem = "newsItem"
+        ></NewsList>
     </div>
 
 </template>
 
 <script>
-    import NewsCard from "./NewsCard";
+    import NewsList from "./NewsList";
     export default {
         name: "HomeComponent",
         components: {
-            NewsCard
+            NewsList
         },
         data() {
             return {
-                news: [],
+                newsFavorites: {},
                 isLoad: false
             }
         },
         created() {
-            // axios.get('api/get-news').then(response => {
-            //     this.news = response.data
-            //     this.isLoad = true
-            //     console.log(response.data)
-            // })
-            // console.log('ok')
+            axios.get('api/get-favorites-news').then(response => {
+                this.newsFavorites = response.data
+                this.isLoad = true
+                console.log(response.data)
+            })
+
         }
     }
 </script>
