@@ -17,3 +17,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('get-news', [\App\Http\Controllers\NewsController::class, 'index']);
 Route::get('get-favorites-news', [\App\Http\Controllers\NewsController::class, 'getFavoritesNews']);
 Route::post('get-news-card', [\App\Http\Controllers\NewsController::class, 'getNewsCard']);
+Route::get('search-news', [\App\Http\Controllers\NewsController::class, 'searchNews']);

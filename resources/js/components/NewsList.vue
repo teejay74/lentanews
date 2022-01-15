@@ -28,6 +28,7 @@
     export default {
         name: "NewsList",
         props: ['newsItem'],
+
         data() {
             return {
                 newsId: this.newsItem.id

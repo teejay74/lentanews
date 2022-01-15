@@ -8,11 +8,16 @@
             <div class="col-md-4">
                 {{ newsItem.text_news }}
             </div>
+                <div class="col-md-3">
+                   Добавить в избранное
+                </div>
         </div>
         <div>
             {{ newsItem.date_news}}
         </div>
-        <strong>Похожие новости:</strong>
+        <div>
+            <strong>Похожие новости:</strong>
+        </div>
     </div>
 
 </template>
@@ -27,15 +32,13 @@
                     id: this.$route.query.newsId
                 },
                 newsItem: {}
-
             }
         },
         created() {
             axios.post('api/get-news-card', this.data).then(response => {
                 this.newsItem = response.data
-                console.log(response.data)
             })
-            console.log(this.$route.query)
+
         }
     }
 </script>
