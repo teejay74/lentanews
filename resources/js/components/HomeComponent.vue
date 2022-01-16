@@ -28,7 +28,6 @@
             axios.get('api/get-favorites-news').then(response => {
                 this.newsFavorites = response.data
                 this.isLoad = true
-                console.log(response.data)
             })
 
         }

@@ -4,7 +4,7 @@
         <div class="col-md-2 mb-4">
             <div class="bg-image hover-overlay ripple shadow-2-strong rounded-5"
                  data-mdb-ripple-color="light">
-                <img src="/assets/images/image-news.jpg" class="img-fluid" />
+                <img :src="newsItem.poster" class="img-fluid" />
                 <a href="#!">
                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                 </a>
@@ -31,9 +31,12 @@
 
         data() {
             return {
-                newsId: this.newsItem.id
+                newsId: this.newsItem.id,
+
             }
-        }
+        },
+
+
     }
 </script>
 

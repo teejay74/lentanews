@@ -18,25 +18,14 @@ class CreateNewsTable extends Migration
             $table->string('title');
             $table->string('poster');
             $table->string('description');
-            $table->string('text_news');
-            $table->string('date_news');
+            $table->longText('text_news');
+            $table->date('date_news');
             $table->string('region');
             $table->string('tags');
             $table->boolean('favorites');
             $table->timestamps();
         });
     }
-    /**
-     'title',
-    'poster',
-    'description',
-    'text_news',
-    'date_news',
-    'region',
-    'tags',
-    'favorites'
-     */
-
 
     /**
      * Reverse the migrations.

@@ -55,7 +55,7 @@
         methods: {
             getNewsCard(data) {
                 axios.post('api/get-news-card', data).then(response => {
-                    console.log(response.data)
+
                     this.newsItem = response.data
                     this.isLoad = true
                 })
@@ -65,7 +65,7 @@
                 axios.post('api/save-status-favorites', this.data).then(response => {
                     this.getNewsCard(this.data)
 
-                    console.log(response.data)
+
 
                 })
             }

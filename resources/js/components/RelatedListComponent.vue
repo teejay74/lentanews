@@ -1,5 +1,5 @@
 <template>
-    <li><router-link tag="a" :to="{ name: 'newsCard', query: {newsId} }" >{{ relatedItem.title }}</router-link></li>
+    <li><router-link tag="a" :to="{ name: 'newsCard', query: { newsId } }" >{{ relatedItem.title }}</router-link></li>
 </template>
 
 <script>
