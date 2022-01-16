@@ -38,7 +38,6 @@
                 this.newsCity = reg === '74' ? 'Челябинска':'Москвы'
             }
 
-
         },
         created() {
             this.getRegionNews(this.region)
