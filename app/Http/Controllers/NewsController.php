@@ -6,6 +6,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\News;
 use Illuminate\Support\Facades\Validator;
+use mysql_xdevapi\Exception;
 
 class NewsController extends Controller
 {
@@ -14,11 +15,32 @@ class NewsController extends Controller
     }
 
     public function getFavoritesNews() {
+        //Возвращаем избранные новости
         return News::all()->where('favorites', 1);
     }
 
+    public function saveFavoritesStatus(Request $request) {
+        $currentNews = News::all()->where('id',$request->id)->first();
+        $currentNews->favorites = $request->favoritesStatus;
+        try {
+            $currentNews->save();
+            return 'Saved successfully';
+        } catch (Exception $e) {
+            return $e;
+        }
+        //Возвращаем избранные новости
+        //return News::all()->where('favorites', 1);
+    }
+
     public function getNewsCard(Request $request) {
-        return News::all()->where('id', $request->id)->first();
+        $currentNews = News::all()->where('id', $request->id)->first();
+        //Ищем похожые новости по значению tag и добавляем в объект response
+        $currentNews->related = $this->getRelatedNews($currentNews->tags);
+        return $currentNews;
+    }
+
+    public function getRelatedNews($tag) {
+        return  News::all()->where('tags', $tag);
     }
 
     public function searchNews(Request $request) {

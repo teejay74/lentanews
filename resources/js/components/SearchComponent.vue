@@ -19,18 +19,11 @@
         },
         methods: {
             findNews() {
-                console.log('work')
-                //window.location.href = `search-result?q=${this.searchText}`
-               router.push({ path: 'search-result', query: {q: this.searchText}})
-                //router.push(`search-result?q=${this.searchText}`)
-
+                router.push({ path: 'search-result', query: {q: this.searchText}})
                 this.searchText = ''
 
             }
         },
-
-
-
 
 
     }

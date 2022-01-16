@@ -32,7 +32,7 @@
                })
            }
         },
-
+        //Обновляем компоненту после обновления query параметров
         beforeRouteUpdate(to, from, next) {
             this.foundNews = {}
             this.searchNews(to.query.q)

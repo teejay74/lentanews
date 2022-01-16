@@ -10,7 +10,8 @@
                 <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
                     <li><router-link :to="'/'" class="nav-link px-2 text-white">Главная</router-link></li>
                     <li> <router-link :to="'/all'" class="nav-link px-2 text-white">Все новости</router-link></li>
-                    <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Новости Москвы</a></li>
+                    <li><a href="#" class="nav-link px-2 text-white">Новости Челябинска</a></li>
                 </ul>
                 <SearchComponent></SearchComponent>
             </div>
