@@ -19,7 +19,7 @@ class CreateNewsTable extends Migration
             $table->string('poster');
             $table->string('description');
             $table->longText('text_news');
-            $table->date('date_news');
+            $table->string('date_news');
             $table->string('region');
             $table->string('tags');
             $table->boolean('favorites');
